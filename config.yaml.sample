@@ -1,0 +1,19 @@
+auth:
+  type: #str (plaintext|hvault)
+  hvault:
+    vault_address: <vault address>
+    username: <vault username>
+    password: <vault password>
+    cs_client_id: <name of the value containing the client id>
+    cs_client_secret: <name of the value containing the client sceret>
+    mount_path: <mount path within hashcorp>
+    key: <key at the mount_path>
+  plaintext:
+    cs_client_id: <cs client id>
+    cs_client_secret: <cs client sceret>
+cs_cloud: <cs environment> (us-1, us-2, etc)
+mapping:
+  process_creation: # logsource.category
+    experimental: monitor # sigma staus -> cs disposition
+    detect: detect
+    production: kill_process
